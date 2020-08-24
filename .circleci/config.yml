@@ -7,8 +7,6 @@ workflows:
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/node-texlive
           update-description: true
-          docker-username: $DOCKER_LOGIN
-          docker-passowrd: $DOCKER_PASSWORD
           filters:
             branches:
               only:
