@@ -1,0 +1,16 @@
+version: 2.1
+orbs:
+  docker: circleci/docker@1.4.0
+workflows:
+  build-docker-image-only:
+    jobs:
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/node-texlive
+          update-description: true
+          # docker-username: $DOCKER_USER
+          # docker-passowrd: $DOCKER_PASS
+          filters:
+            branches:
+              only:
+                - master
+
