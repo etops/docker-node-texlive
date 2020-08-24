@@ -5,8 +5,9 @@ workflows:
   build-docker-image-only:
     jobs:
       - docker/publish:
-          image: $CIRCLE_PROJECT_USERNAME/node-texlive
-          tag: $CIRCLE_BUILD_NUM
+          cache_from: etops/node-texlive:latest
+          image: etops/node-texlive
+          tag: latest,$CIRCLE_BUILD_NUM
           update-description: true
           use-docker-credentials-store: true
           filters:
