@@ -1,5 +1,5 @@
-FROM node:14.8-buster
-MAINTAINER dev@etops.ch
+FROM node:14.14-buster-slim
+LABEL MAINTAINER="dev@etops.ch"
 
 RUN apt-get update -q && apt-get install -qy \
     texlive-full \
